@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expert Edge – Research & Product Development</title>
+
+<!-- ✅ SEO META TAGS (ADD HERE) -->
+<meta name="description" content="Expert Edge Research & Development – Embedded systems, biomedical devices, AI, IoT, PCB design, prototyping and product development in India.">
+<meta name="keywords" content="Research and Development, Embedded Systems, Biomedical Engineering, AI, IoT, PCB Design, Product Development, Chennai">
+<meta name="author" content="Expert Edge Research & Development">
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#eef4fb;
+  color:#1f2933;
+  overflow-x:hidden;
+}
+
+/* ================= SCROLL ANIMATION ================= */
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:all 0.9s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ================= HEADER ================= */
+header{
+  text-align:center;
+  padding:100px 20px;
+
+  /* 🌈 COLOURFUL BACKGROUND */
+  background: linear-gradient(
+    135deg,
+    #0f4c81,
+    #c81d25,
+    #e63946,
+    #6a11cb
+  );
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+
+  color:#ffffff;
+}
+
+/* 🌈 BACKGROUND ANIMATION */
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* LOGO CONTAINER */
+.logo-wrapper{
+  display:flex;
+  justify-content:center;
+  margin-bottom:40px;
+}
+
+/* LOGO IMAGE */
+.logo-img{
+  width:420px;
+  max-width:95%;
+  height:auto;
+
+  /* Keep black invisible but boost logo */
+  mix-blend-mode:screen;
+
+  /* 🔥 BRIGHTNESS FIX */
+  filter:
+    brightness(2)
+    contrast(2)
+    saturate(1.2);
+
+  animation:logoFade 1.2s ease forwards;
+}
+
+
+/* LOGO ANIMATION */
+@keyframes logoFade{
+  from{
+    opacity:0;
+    transform:scale(0.9);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+/* TEXT */
+header h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
+header p{
+  max-width:720px;
+  margin:auto;
+  font-size:18px;
+}
+
+
+
+/* ================= BUTTON ================= */
+.button{
+  margin-top:25px;
+  padding:14px 34px;
+  border-radius:30px;
+  border:none;
+  background:#ffd166;
+  font-weight:700;
+  cursor:pointer;
+  transition:all .3s ease;
+}
+.button:hover{
+  transform:translateY(-6px) scale(1.05);
+  box-shadow:0 18px 40px rgba(0,0,0,0.25);
+}
+
+/* ================= FEATURES ================= */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:28px;
+  padding:70px 10%;
+}
+.card{
+  background:white;
+  padding:32px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 15px 35px rgba(15,76,129,0.18);
+  font-weight:700;
+  color:#0f4c81;
+  transition:.35s;
+}
+.card:hover{
+  background:linear-gradient(135deg,#c81d25,#e63946);
+  color:white;
+  transform:translateY(-10px) scale(1.05);
+}
+
+/* ================= INFO SECTIONS ================= */
+/* ================= INFO SECTIONS ================= */
+.info-section{
+  padding:70px 10%;
+}
+
+.info-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  padding:45px;
+  border-radius:22px;
+  margin-bottom:60px;
+
+  /* ✅ BOTH START BLUE */
+  background:linear-gradient(135deg,#0f4c81,#1d6fa5);
+  color:white;
+
+  transition:all .4s ease;
+}
+
+/* ✅ BOTH CHANGE TO RED ON HOVER */
+.info-box:hover{
+  background:linear-gradient(135deg,#c81d25,#e63946);
+  transform:translateY(-10px);
+  box-shadow:0 25px 60px rgba(0,0,0,0.35);
+}
+
+/* reverse only controls layout order, NOT color */
+.info-box.reverse{
+  direction:ltr;
+}
+
+.info-text h2{
+  color:#ffd166;
+  font-size:34px;
+}
+
+.info-text p{
+  font-size:17px;
+  line-height:1.7;
+}
+
+.info-image img{
+  max-width:280px;
+  display:block;
+  margin:auto;
+}
+
+
+/* ================= PROJECTS ================= */
+.projects-section{padding:70px 10%;}
+.projects-section h2{
+  text-align:center;
+  font-size:38px;
+  color:#0f4c81;
+  margin-bottom:45px;
+}
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.project-card{
+  background:linear-gradient(180deg,#0f4c81,#1d6fa5);
+  border-radius:24px;
+  overflow:hidden;
+  color:white;
+  box-shadow:0 20px 45px rgba(0,0,0,0.22);
+  transition:.4s;
+}
+.project-card:hover{
+  background:linear-gradient(180deg,#c81d25,#e63946);
+  transform:translateY(-12px) scale(1.05);
+}
+.project-image{height:190px;overflow:hidden;}
+.project-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+.project-card:hover img{transform:scale(1.15);}
+.project-content{padding:24px;}
+.project-content h3{color:#ffffff;font-size:21px;}
+.project-content p{font-size:15px;line-height:1.6;}
+
+/* ================= DELIVERY ================= */
+/* ================= DELIVERY ================= */
+.delivery-section{
+  padding:70px 10%;
+}
+
+.delivery-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  padding:45px;
+  border-radius:22px;
+  margin-bottom:60px;
+
+  /* ✅ PREVIOUSLY USED BLUE */
+  background:linear-gradient(135deg,#0f4c81,#1d6fa5);
+  color:white;
+
+  transition:all .4s ease;
+}
+
+/* ✅ BOTH TURN RED ON HOVER */
+.delivery-box:hover{
+  background:linear-gradient(135deg,#c81d25,#e63946);
+  transform:translateY(-10px);
+  box-shadow:0 25px 60px rgba(0,0,0,0.35);
+}
+
+/* reverse = layout only */
+.delivery-box.reverse{
+  color:white;
+}
+
+.delivery-image img{
+  max-width:280px;
+  display:block;
+  margin:auto;
+}
+
+
+/* ================= CONTACT ================= */
+.contact{
+  text-align:center;
+  padding:70px 10%;
+  background:linear-gradient(135deg,#0f4c81,#1d3557);
+  color:white;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#0f4c81;
+  color:white;
+  padding:45px 10%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+footer h3{color:#ffd166;}
+footer p{font-size:14px;}
+.copyright{
+  text-align:center;
+  padding:12px;
+  background:#0f4c81;
+  font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+  .info-box,.delivery-box{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="reveal">
+  <div class="logo-wrapper">
+    <img src="Logo.jpeg" alt="Expert Edge Logo" class="logo-img">
+  </div>
+
+  <h1>We Build Ideas<br>Before We Build Products</h1>
+  <p>Expert Edge Research & Product Development delivers reliable, scalable engineering solutions.</p>
+
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe30OBCZhBiBJoJSykPombZc-GJqi5UswNnc9hD8xiFOuxvmA/viewform?usp=header" target="_blank">
+  <button class="button">Get Started</button>
+</a>
+
+</header>
+
+
+
+
+<div class="features reveal">
+  <div class="card">Research-Driven Design</div>
+  <div class="card">In-House Development</div>
+  <div class="card">Testing & Validation</div>
+  <div class="card">Pan-India Support</div>
+</div>
+
+<!-- ================= HOW WE WORK ================= -->
+<section class="info-section reveal">
+  <div class="info-box">
+    <div class="info-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149658.png">
+    </div>
+    <div class="info-text">
+      <h2>How We Work</h2>
+      <p>
+        We follow a structured, research-first approach by understanding the problem,
+        analyzing requirements, designing solutions, developing prototypes, and
+        validating performance before deployment.
+      </p>
+    </div>
+  </div>
+
+  <!-- ================= TECHNICAL CONSULTING ================= -->
+  <div class="info-box reverse">
+    <div class="info-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+    </div>
+    <div class="info-text">
+      <h2>Deep Technical Consulting</h2>
+      <p>
+        Our engineers provide end-to-end technical consulting including feasibility
+        analysis, system architecture, optimization, testing, and deployment support
+        across electronics, biomedical, mechanical, and software domains.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECT TYPES ================= -->
+<section class="projects-section reveal">
+<h2>Our Project Types</h2>
+
+<div class="projects-grid">
+  <div class="project-card"><div class="project-image"><img src="Embedded.jpg"></div><div class="project-content"><h3>Embedded Systems & IoT</h3><p>Embedded hardware, firmware and IoT solutions.</p></div></div>
+  <div class="project-card"><div class="project-image"><img src="biomedical.jpg"></div><div class="project-content"><h3>Biomedical Devices</h3><p>Wearable health and medical instrumentation.</p></div></div>
+  <div class="project-card"><div class="project-image"><img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c"></div><div class="project-content"><h3>AI & Machine Learning</h3><p>Prediction, automation and analytics.</p></div></div>
+  <div class="project-card"><div class="project-image"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475"></div><div class="project-content"><h3>Product Prototyping</h3><p>Research, testing and validation.</p></div></div>
+
+  <div class="project-card"><div class="project-image"><img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952"></div><div class="project-content"><h3>PCB Designing</h3><p>Schematic & multilayer PCB layout.</p></div></div>
+  <div class="project-card"><div class="project-image"><img src="fabricating.jpg"></div><div class="project-content"><h3>PCB Fabrication</h3><p>High-quality PCB manufacturing.</p></div></div>
+  <div class="project-card"><div class="project-image"><img src="assembly.jpg"></div><div class="project-content"><h3>PCB Assembly</h3><p>SMT & THT component assembly.</p></div></div>
+
+  <div class="project-card"><div class="project-image"><img src="3ddesign.jpg"></div><div class="project-content"><h3>3D Designing</h3><p>Mechanical CAD and enclosures.</p></div></div>
+  <div class="project-card"><div class="project-image"><img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed"></div><div class="project-content"><h3>3D Printing</h3><p>Rapid prototyping with PLA & ABS.</p></div></div>
+  <div class="project-card"><div class="project-image"><img src="cnc.jpg"></div><div class="project-content"><h3>CNC Machining</h3><p>Precision CNC metal & plastic parts.</p></div></div>
+
+  <div class="project-card"><div class="project-image"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"></div><div class="project-content"><h3>Web Development</h3><p>Web apps and dashboards.</p></div></div>
+  <div class="project-card"><div class="project-image"><img src="robotics.png"></div><div class="project-content"><h3>Robotics</h3><p>Robotic arms and automation.</p></div></div>
+  <div class="project-card"><div class="project-image"><img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72"></div><div class="project-content"><h3>Artificial Intelligence</h3><p>AI and Deep Learning.</p></div></div>
+</div>
+</section>
+
+<!-- ================= DELIVERY ================= -->
+<section class="delivery-section reveal">
+  <div class="delivery-box">
+    <div class="delivery-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/679/679922.png">
+    </div>
+    <div class="delivery-text">
+      <h2>Reliable & Secure Delivery</h2>
+      <p>
+        We partner with trusted logistics providers to ensure secure and timely delivery.
+        Every product is quality-checked and carefully handled before dispatch.
+      </p>
+    </div>
+  </div>
+
+  <div class="delivery-box reverse">
+    <div class="delivery-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991108.png">
+    </div>
+    <div class="delivery-text">
+      <h2>Premium Protective Packing</h2>
+      <p>
+        Multi-layer protective packing safeguards electronic, biomedical,
+        and mechanical products during transportation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="contact reveal">
+  <h2>Get in Touch</h2>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfB34vqBBKFa8QmKCLjq9jSgC9nwkci3tD2g6Za6GKfTgtp-A/viewform?usp=publish-editor" target="_blank">
+  <button class="button">Contact Support</button>
+</a>
+
+</section>
+<!-- ================= OUR TEAM ================= -->
+<section class="team-section reveal">
+  <h2 style="text-align:center;font-size:38px;color:#0f4c81;margin-bottom:45px;">
+    Our Team
+  </h2>
+
+  <div class="team-grid" style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    padding:0 10%;
+  ">
+
+    <div class="team-card" style="
+      background:#0f4c81;
+      border-radius:20px;
+      padding:30px;
+      text-align:center;
+      box-shadow:0 15px 35px rgba(0,0,0,0.15);
+      transition:.35s;
+    ">
+    <img src="Gaushik.jpeg" alt="Gaushik K" style="
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 15px;
+  border:4px solid #ffd166;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+">
+<h3>Gaushik K</h3>
+<p>Head</p>
+
+
+    <img src="Praveen-14-10-2025.jpg" alt="Praveen R" style="
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 15px;
+  border:4px solid #ffd166;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+">
+<h3>Praveen R</h3>
+<p>Engineer</p>
+
+
+    <img src="Sudharshan.jpeg" alt="Sudhashan" style="
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 15px;
+  border:4px solid #ffd166;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+">
+<h3>Sudharshan</h3>
+<p>Engineer</p>
+
+
+    <img src="Sanjeevy.jpeg" alt="Sanjeevy S" style="
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 15px;
+  border:4px solid #ffd166;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+">
+<h3>Sanjeevy S</h3>
+<p>Engineer</p>
+
+
+  </div>
+</section>
+
+
+<footer class="reveal">
+  <div><h3>Company</h3><p>About Us: Expert Edge Research & Development is an innovation-driven organization committed to advancing technology through research, design, and real-world implementation. We specialize in transforming complex scientific ideas into practical, scalable, and impactful solutions across engineering, healthcare, and intelligent systems.</p><p>Careers: At Expert Edge Research & Development, we are always looking for passionate innovators, researchers, and problem-solvers who are eager to push technological boundaries. We believe our people are our greatest strength, and we foster an environment that encourages learning, creativity, and real-world impact.</p></div>
+  <div><h3>Contact</h3><p>📞 +91 8925044653</p><p>📞 +91 8925044652</p><p>✉ research@expertedgemi.com</p><p>Address : No.4, Jeeva St, RV garden, Tambaram Sanatorium, Chennai, Tamil Nadu - 600045 </p></div>
+</footer>
+
+<div class="copyright">
+© 2025 Expert Edge Research & Product Development. All Rights Reserved.
+</div>
+
+<script>
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".reveal").forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
